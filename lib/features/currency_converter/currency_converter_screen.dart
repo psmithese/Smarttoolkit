@@ -9,11 +9,14 @@ class CurrencyConverterScreen extends StatefulWidget {
   const CurrencyConverterScreen({super.key});
 
   @override
-  State<CurrencyConverterScreen> createState() => _CurrencyConverterScreenState();
+  State<CurrencyConverterScreen> createState() =>
+      _CurrencyConverterScreenState();
 }
 
 class _CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
-  final TextEditingController _amountController = TextEditingController(text: "1");
+  final TextEditingController _amountController = TextEditingController(
+    text: "1",
+  );
 
   @override
   void dispose() {
@@ -42,7 +45,8 @@ class _CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
                         controller: _amountController,
                         label: "Amount to Convert",
                         prefixIcon: Icons.attach_money_rounded,
-                        onChanged: (v) => viewModel.calculate(_amountController.text),
+                        onChanged: (v) =>
+                            viewModel.calculate(_amountController.text),
                       ),
                       const SizedBox(height: 24),
                       Row(
@@ -53,14 +57,20 @@ class _CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
                               viewModel.fromCurrency,
                               (v) {
                                 if (v != null) {
-                                  viewModel.setFromCurrency(v, _amountController.text);
+                                  viewModel.setFromCurrency(
+                                    v,
+                                    _amountController.text,
+                                  );
                                 }
                               },
                             ),
                           ),
                           const Padding(
                             padding: EdgeInsets.symmetric(horizontal: 12),
-                            child: Icon(Icons.swap_horiz_rounded, color: Colors.white24),
+                            child: Icon(
+                              Icons.swap_horiz_rounded,
+                              color: Colors.white24,
+                            ),
                           ),
                           Expanded(
                             child: _buildCurrencyDropdown(
@@ -68,7 +78,10 @@ class _CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
                               viewModel.toCurrency,
                               (v) {
                                 if (v != null) {
-                                  viewModel.setToCurrency(v, _amountController.text);
+                                  viewModel.setToCurrency(
+                                    v,
+                                    _amountController.text,
+                                  );
                                 }
                               },
                             ),
@@ -84,14 +97,17 @@ class _CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
                 Text(
                   viewModel.result.toStringAsFixed(2),
                   style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                        color: AppTheme.primaryAccent,
-                        fontSize: 56,
-                      ),
+                    color: AppTheme.primaryAccent,
+                    fontSize: 56,
+                  ),
                 ),
                 Text(
                   viewModel.toCurrency,
                   style: const TextStyle(
-                      color: Colors.white54, fontSize: 20, fontWeight: FontWeight.bold),
+                    color: Colors.white54,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 const SizedBox(height: 40),
                 const Text(
@@ -107,7 +123,10 @@ class _CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
   }
 
   Widget _buildCurrencyDropdown(
-      Map<String, double> rates, String value, Function(String?) onChanged) {
+    Map<String, double> rates,
+    String value,
+    Function(String?) onChanged,
+  ) {
     if (!rates.containsKey(value)) {
       // In case the fetched rates don't contain the currently selected currency during loading/switching
       if (rates.isNotEmpty) {

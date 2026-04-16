@@ -4,17 +4,20 @@ import 'package:http/http.dart' as http;
 class CurrencyRepository {
   Future<Map<String, double>> fetchRates(String baseCurrency) async {
     final code = baseCurrency.toLowerCase();
-    final url = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/$code.json";
-    
+    final url =
+        "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/$code.json";
+
     try {
       final response = await http.get(Uri.parse(url));
-      
+
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
         if (data[code] != null) {
           Map<String, dynamic> rates = data[code];
           // Map keys to uppercase and ensure values are doubles
-          return rates.map((key, value) => MapEntry(key.toUpperCase(), value.toDouble()));
+          return rates.map(
+            (key, value) => MapEntry(key.toUpperCase(), value.toDouble()),
+          );
         }
       }
       throw Exception("Failed to load currency rates");
@@ -32,4 +35,3 @@ class CurrencyRepository {
     }
   }
 }
-
