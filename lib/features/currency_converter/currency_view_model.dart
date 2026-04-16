@@ -50,6 +50,12 @@ class CurrencyViewModel extends ChangeNotifier {
   }
 
   void calculate(String amountText) {
+    if (amountText.isEmpty) {
+      _result = 0.0;
+      notifyListeners();
+      return;
+    }
+    
     double? amount = double.tryParse(amountText);
     if (amount != null && _rates.containsKey(_toCurrency)) {
       _result = amount * _rates[_toCurrency]!;
@@ -60,3 +66,4 @@ class CurrencyViewModel extends ChangeNotifier {
     }
   }
 }
+

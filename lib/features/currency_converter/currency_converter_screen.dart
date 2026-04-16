@@ -95,7 +95,7 @@ class _CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
                 ),
                 const SizedBox(height: 40),
                 const Text(
-                  "Data powered by ExchangeRate-API",
+                  "Real-time data powered by Currency API",
                   style: TextStyle(color: Colors.white24, fontSize: 12),
                 ),
               ],
