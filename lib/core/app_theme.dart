@@ -50,7 +50,6 @@ class AppTheme {
     );
   }
 
-  // Glassmorphism Decoration utility
   static BoxDecoration glassDecoration({BorderRadius? borderRadius}) {
     return BoxDecoration(
       color: glassColor,

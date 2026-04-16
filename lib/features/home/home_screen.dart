@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
               height: 300,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: AppTheme.primaryAccent.withOpacity(0.2),
+                color: AppTheme.primaryAccent.withValues(alpha: 0.2),
               ),
             ),
           ).animate().fadeIn(duration: 1.seconds).scale(),
@@ -76,6 +76,13 @@ class HomeScreen extends StatelessWidget {
                           color: Colors.purple,
                           route: '/tip',
                         ),
+                        _buildToolCard(
+                          context,
+                          title: "Checklist",
+                          icon: Icons.checklist_rtl,
+                          color: Colors.orangeAccent,
+                          route: '/tasks',
+                        ),
                       ],
                     ),
                   ),
@@ -105,7 +112,7 @@ class HomeScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: color.withOpacity(0.1),
+                color: color.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(icon, size: 32, color: color),

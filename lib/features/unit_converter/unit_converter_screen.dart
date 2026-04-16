@@ -47,8 +47,8 @@ class _UnitConverterScreenState extends State<UnitConverterScreen> {
                           onSelected: (val) {
                             viewModel.setCategory(cat, _inputController.text);
                           },
-                          selectedColor: AppTheme.primaryAccent.withOpacity(
-                            0.3,
+                          selectedColor: AppTheme.primaryAccent.withValues(
+                            alpha: 0.3,
                           ),
                           labelStyle: TextStyle(
                             color: isSelected ? Colors.white : Colors.white54,
@@ -143,7 +143,7 @@ class _UnitConverterScreenState extends State<UnitConverterScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(12),
       ),
       child: DropdownButtonHideUnderline(
