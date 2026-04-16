@@ -13,7 +13,7 @@ Convert between different units of measurement across categories like length, we
 Compute your Body Mass Index with visual health-category indicators. Supports both metric and imperial inputs.
 
 ### 💱 Currency Converter
-Convert currencies using live exchange rates fetched from an open API. Includes a graceful fallback for offline conditions.
+Convert currencies using real-time exchange rates via a high-performance, keyless API (Currency API). Includes a robust offline fallback mechanism and cached rate handling.
 
 ### 💡 Tip Calculator
 Calculate tip amounts and split the bill between any number of people with an intuitive slider-based interface.
@@ -32,7 +32,7 @@ A fully-featured task management module with:
 
 ---
 
-## 🏗️ Architecture & Code Quality
+## 🏗️ Architecture & Engineering Excellence
 
 The app follows a clean **MVVM (Model-View-ViewModel)** architecture with the **Repository pattern** for data access.
 
@@ -56,13 +56,14 @@ lib/
         └── task_screen.dart      # Full UI with animations
 ```
 
-| Concern | Solution |
+| Concern | Senior-Grade Solution |
 |---|---|
-| State Management | `provider` package — `ChangeNotifier` + `Consumer` |
-| Offline Storage | `shared_preferences` — lists serialised as JSON strings |
-| Animations | `flutter_animate` — fade, slide, scale micro-animations |
-| Typography | `google_fonts` — Plus Jakarta Sans |
-| Navigation | Named routes registered in `MaterialApp` |
+| State Management | `provider` — Decoupled `ChangeNotifier` + `Consumer` architecture |
+| Rendering | **Flutter 3.x Optimized**: Using `withValues(alpha:)` for performance-efficient glassmorphism |
+| Offline Storage | `shared_preferences` — JSON-serialized local persistence |
+| Animations | `flutter_animate` — Custom fade, slide, and scale micro-animations |
+| Typography | `google_fonts` — Premium Plus Jakarta Sans stack |
+| Code Quality | Strict `analysis_options.yaml` + Clean Git Hygiene |
 
 ---
 
@@ -76,7 +77,7 @@ lib/
 ### Running Locally
 ```bash
 # 1. Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/psmithese/Smarttoolkit.git
 cd smarttoolkit
 
 # 2. Install dependencies
@@ -104,5 +105,5 @@ All task data is persisted locally via `SharedPreferences`. Tasks are serialised
 ---
 
 ## 🔗 Submission Links
-- **Appetize Preview**: *(insert link)*
-- **GitHub Repository**: *(insert link)*
+- **Appetize Preview**: *(pending deployment)*
+- **GitHub Repository**: [https://github.com/psmithese/Smarttoolkit](https://github.com/psmithese/Smarttoolkit.git)
